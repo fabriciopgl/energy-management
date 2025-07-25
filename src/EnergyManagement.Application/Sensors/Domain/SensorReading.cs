@@ -1,4 +1,6 @@
-﻿namespace EnergyManagement.Application.Sensors.Domain;
+﻿using EnergyManagement.Application.Devices.Domain;
+
+namespace EnergyManagement.Application.Sensors.Domain;
 
 public class SensorReading
 {
@@ -10,4 +12,8 @@ public class SensorReading
     public double Energy { get; set; }
     public int Rssi { get; set; }
     public long FreeHeap { get; set; }
+
+    // Navigation properties
+    public int DeviceId { get; set; }
+    public Device Device { get; set; } = null!;
 }
