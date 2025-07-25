@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MyEnergyApi": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5144"
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}
