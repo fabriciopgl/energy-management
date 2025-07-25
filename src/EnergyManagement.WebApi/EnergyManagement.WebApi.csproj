@@ -17,4 +17,10 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\EnergyManagement.Application\EnergyManagement.Application.csproj" />
+	  <ProjectReference Include="..\..\..\EnergyManagement.Core\EnergyManagement.Core.csproj" />
+	  <ProjectReference Include="..\..\..\EnergyManagement.Infraestructure\EnergyManagement.Infraestructure.csproj" />
+	</ItemGroup>
+
 </Project>

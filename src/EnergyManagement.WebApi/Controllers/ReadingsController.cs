@@ -1,11 +1,11 @@
-﻿using EnergyManagementApi.Repositories;
+﻿using EnergyManagement.Application.Sensors.Domain;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EnergyManagementApi.Controllers;
+namespace EnergyManagement.WebApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ReadingsController(IReadingRepository repo) : ControllerBase
+public class ReadingsController(ISensorReadingRepository repo) : ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Get([FromQuery] int limit = 50)

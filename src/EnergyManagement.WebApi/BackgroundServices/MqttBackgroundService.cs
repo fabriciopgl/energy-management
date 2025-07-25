@@ -1,6 +1,6 @@
-﻿using EnergyManagementApi.Services;
+﻿using EnergyManagement.Core.Services;
 
-namespace EnergyManagementApi.BackgroundServices;
+namespace EnergyManagement.WebApi.BackgroundServices;
 
 public class MqttBackgroundService(IMqttClientService mqttService, ILogger<MqttBackgroundService> logger) : BackgroundService
 {

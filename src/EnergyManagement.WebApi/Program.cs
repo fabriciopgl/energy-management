@@ -1,7 +1,9 @@
-using EnergyManagementApi.BackgroundServices;
-using EnergyManagementApi.Data;
-using EnergyManagementApi.Repositories;
-using EnergyManagementApi.Services;
+using EnergyManagement.Application.Sensors.Domain;
+using EnergyManagement.Core.Services;
+using EnergyManagement.Infraestructure.Data;
+using EnergyManagement.Infraestructure.Repositories;
+using EnergyManagement.Infraestructure.Services;
+using EnergyManagement.WebApi.BackgroundServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(opts =>
     opts.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
 // DI
-builder.Services.AddScoped<IReadingRepository, ReadingRepository>();
+builder.Services.AddScoped<ISensorReadingRepository, SensorReadingRepository>();
 builder.Services.AddSingleton<IMqttClientService, MqttClientService>();
 builder.Services.AddHostedService<MqttBackgroundService>();
 
