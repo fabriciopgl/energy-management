@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyManagementApi", "EnergyManagementApi.csproj", "{2C0DB3D2-1648-6D00-15C8-0A5DE19C3A9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyManagement.WebApi", "src\EnergyManagement.WebApi\EnergyManagement.WebApi.csproj", "{EADA8470-F556-CC32-B39D-F25A96A0E58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyManagement.Core", "src\EnergyManagement.Core\EnergyManagement.Core.csproj", "{20E300AE-27AB-0522-6C61-2F8F2280EB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyManagement.Application", "src\EnergyManagement.Application\EnergyManagement.Application.csproj", "{5668565C-FB4A-D3BB-8148-38D3511A4B56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyManagement.Infraestructure", "src\EnergyManagement.Infraestructure\EnergyManagement.Infraestructure.csproj", "{B7BA656F-0A92-4BC0-0A04-482359842BC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C0DB3D2-1648-6D00-15C8-0A5DE19C3A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C0DB3D2-1648-6D00-15C8-0A5DE19C3A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C0DB3D2-1648-6D00-15C8-0A5DE19C3A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C0DB3D2-1648-6D00-15C8-0A5DE19C3A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EADA8470-F556-CC32-B39D-F25A96A0E58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADA8470-F556-CC32-B39D-F25A96A0E58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADA8470-F556-CC32-B39D-F25A96A0E58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADA8470-F556-CC32-B39D-F25A96A0E58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E300AE-27AB-0522-6C61-2F8F2280EB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E300AE-27AB-0522-6C61-2F8F2280EB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E300AE-27AB-0522-6C61-2F8F2280EB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E300AE-27AB-0522-6C61-2F8F2280EB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5668565C-FB4A-D3BB-8148-38D3511A4B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5668565C-FB4A-D3BB-8148-38D3511A4B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5668565C-FB4A-D3BB-8148-38D3511A4B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5668565C-FB4A-D3BB-8148-38D3511A4B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7BA656F-0A92-4BC0-0A04-482359842BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BA656F-0A92-4BC0-0A04-482359842BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BA656F-0A92-4BC0-0A04-482359842BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BA656F-0A92-4BC0-0A04-482359842BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
