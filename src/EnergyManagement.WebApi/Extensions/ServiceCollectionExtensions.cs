@@ -1,5 +1,9 @@
-﻿using EnergyManagement.Application.Devices.Domain;
+﻿using EnergyManagement.Application.Analytics.Domain;
+using EnergyManagement.Application.Analytics.Services;
+using EnergyManagement.Application.Analytics.Services.MachineLearning;
+using EnergyManagement.Application.Devices.Domain;
 using EnergyManagement.Application.Devices.Services;
+using EnergyManagement.Application.Sensors.Services;
 using EnergyManagement.Application.Users.Domain;
 using EnergyManagement.Application.Users.Services;
 using EnergyManagement.Infraestructure.Data;
@@ -74,6 +78,23 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAuthApplicationService, AuthApplicationService>();
         services.AddScoped<IDeviceApplicationService, DeviceApplicationService>();
+        services.AddScoped<ISensorDataService, SensorDataService>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddAnalyticsServices(this IServiceCollection services)
+    {
+        // Repositórios
+        services.AddScoped<IAnalyticsRepository, AnalyticsRepository>();
+
+        // Serviços de Machine Learning
+        services.AddScoped<IClusteringService, ClusteringService>();
+        services.AddScoped<IAnomalyDetectionService, AnomalyDetectionService>();
+        services.AddScoped<IPredictionService, PredictionService>();
+
+        // Serviço principal de Analytics
+        services.AddScoped<IAnalyticsApplicationService, AnalyticsApplicationService>();
 
         return services;
     }

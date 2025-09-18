@@ -83,12 +83,14 @@ public class MqttClientService : IMqttClientService, IDisposable
                     Power = dto.Power,
                     Energy = dto.Energy,
                     Rssi = dto.Rssi,
-                    FreeHeap = dto.FreeHeap
+                    FreeHeap = dto.FreeHeap,
+                    DeviceId = 1
                 };
 
                 // Criar um novo scope para usar o repository
                 using var scope = _scopeFactory.CreateScope();
                 var repo = scope.ServiceProvider.GetRequiredService<ISensorReadingRepository>();
+
                 await repo.AddAsync(reading);
 
                 _logger.LogInformation("Leitura do sensor salva: {Timestamp}", reading.Timestamp);

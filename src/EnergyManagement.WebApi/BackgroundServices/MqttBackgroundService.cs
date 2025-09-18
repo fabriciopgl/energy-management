@@ -9,7 +9,7 @@ public class MqttBackgroundService(IMqttClientService mqttService, ILogger<MqttB
         try
         {
             logger.LogInformation("Iniciando MQTT Background Service");
-            await mqttService.StartAsync(stoppingToken);
+            //await mqttService.StartAsync(stoppingToken);
 
             // Manter o serviço rodando até ser cancelado
             await Task.Delay(Timeout.Infinite, stoppingToken);
