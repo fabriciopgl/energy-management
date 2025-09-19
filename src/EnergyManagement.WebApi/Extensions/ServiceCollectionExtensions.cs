@@ -1,4 +1,5 @@
-﻿using EnergyManagement.Application.Devices.Domain;
+﻿using EnergyManagement.Application.Analytics.Services;
+using EnergyManagement.Application.Devices.Domain;
 using EnergyManagement.Application.Devices.Services;
 using EnergyManagement.Application.Users.Domain;
 using EnergyManagement.Application.Users.Services;
@@ -74,6 +75,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAuthApplicationService, AuthApplicationService>();
         services.AddScoped<IDeviceApplicationService, DeviceApplicationService>();
+        services.AddScoped<IEnergyAnalysisApplicationService, EnergyAnalysisApplicationService>();
 
         return services;
     }

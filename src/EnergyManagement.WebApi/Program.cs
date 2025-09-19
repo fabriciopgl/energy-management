@@ -24,12 +24,26 @@ builder.Services.AddSwaggerDocumentation();
 // CORS (para frontend)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://localhost:3000") // Next.js default
-              .AllowAnyHeader()
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowCredentials();
+              .AllowAnyHeader();
+    });
+
+    // Política específica para desenvolvimento local
+    options.AddPolicy("DevelopmentCors", policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:3000",     // React dev server
+                "http://localhost:5173",     // Vite dev server  
+                "http://127.0.0.1:5500",     // Live Server VSCode
+                "null"                       // Arquivos locais
+              )
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials()
+              .SetIsOriginAllowed(origin => true); // Permite qualquer origem em dev
     });
 });
 
@@ -42,11 +56,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Energy Management API V1");
-        c.RoutePrefix = "swagger";
+        c.RoutePrefix = string.Empty;
     });
+
+    // IMPORTANTE: Usar a política mais permissiva em desenvolvimento
+    app.UseCors("DevelopmentCors");
+}
+else
+{
+    // Em produção, usar política mais restritiva
+    app.UseCors("AllowAll");
 }
 
-app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 

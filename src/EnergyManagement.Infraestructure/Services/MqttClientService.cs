@@ -83,8 +83,12 @@ public class MqttClientService : IMqttClientService, IDisposable
                     Power = dto.Power,
                     Energy = dto.Energy,
                     Rssi = dto.Rssi,
-                    FreeHeap = dto.FreeHeap
+                    FreeHeap = dto.FreeHeap,
+                    DeviceId = 1
                 };
+
+                if (dto.Power < 2)
+                    return;
 
                 // Criar um novo scope para usar o repository
                 using var scope = _scopeFactory.CreateScope();
